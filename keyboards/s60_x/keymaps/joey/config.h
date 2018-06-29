@@ -1,3 +1,3 @@
-#define TAPPING_TERM 10
+#define TAPPING_TERM 100
 #define RETRO_TAPPING
 #define PERMISSIVE_HOLD
