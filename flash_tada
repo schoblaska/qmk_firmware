@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 
 make tada68:joey:flashbin
-echo "sleeping 10 seconds - put keyboard into flashing mode now"
-sleep 10
+
+printf "\nwaiting for keyboard to be put into flashing mode"
+
+until [ -d "/Volumes/TADA68  " ]; do
+  sleep 1
+  printf "."
+done
+
 cd /Volumes/TADA68\ \ /
 cp /Users/joey/projects/qmk_firmware/tada68_joey.bin ./FLASH.BIN
 rm -rf .Trashes/ .fseventsd/ ._.Trashes ._FLASH.bin
 cd -
-df -h
 osascript -e 'tell application "Finder"' -e 'eject "TADA68  "' -e 'end tell'
+
+printf "\n\ndone\n!"
