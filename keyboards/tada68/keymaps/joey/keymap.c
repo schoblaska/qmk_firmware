@@ -25,7 +25,7 @@ LT(1, KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC
   ),
 
   [1] = KEYMAP_ANSI(
-      _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______,  \
+      KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______,  \
       _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______, _______, _______, _______, CTAO,    _______, _______, _______, _______, KC_MPRV,  \
       _______, _______, KC_VOLD, KC_VOLU, KC_MUTE, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, CTASC,   _______,          _______, KC_MUTE,  \
       _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_BTN1, KC_MS_U, KC_BTN2,  \
