@@ -86,13 +86,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ESCFN:
       if (record->event.pressed) {
         escfn_down = 1;
+        escfn_mod_pressed = 0;
       } else {
         if (escfn_mod_pressed == 0) {
           SEND_STRING(SS_TAP(X_ESCAPE));
         }
         escfn_down = 0;
       }
-      escfn_mod_pressed = 0;
       return false;
 
     case KC_H:
