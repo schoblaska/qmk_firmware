@@ -1,4 +1,3 @@
-// press key combo for EPRM
 // make ergodox_ez:joey:dfu
 
 #include QMK_KEYBOARD_H
@@ -6,8 +5,7 @@
 #define _______ KC_TRNS
 
 enum custom_keycodes {
-  ESCFN = SAFE_RANGE,
-  EPRM
+  ESCFN = SAFE_RANGE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -23,10 +21,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         KC_SPC,  KC_LGUI, KC_LCTL,
 
     // right hand
-    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_BSPC,
+    _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
     _______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
              KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
-    _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                       _______, _______, _______, _______, _______,
     _______, _______,
     _______,
@@ -45,12 +43,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______, _______, _______,
 
     // right hand
-    _______, _______, _______, _______, _______, KC_EQL,  _______,
+    _______, _______, _______, _______, KC_MINS, KC_EQL,  _______,
     _______, _______, _______, _______, KC_LBRC, KC_RBRC, _______,
              _______, _______, _______, _______, KC_QUOT, _______,
     _______, _______, _______, _______, _______, _______, KC_RSFT,
                       _______, _______, _______, _______, _______,
-    EPRM,    _______,
+    _______,    _______,
     _______,
     _______, _______, _______
   ),
@@ -103,13 +101,6 @@ void modded_macro_press(keyrecord_t *record, uint16_t orig, char* macro, int *mo
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch(keycode) {
-    case EPRM:
-      if (record->event.pressed) {
-        eeconfig_init();
-      }
-      return false;
-      break;
-
     case ESCFN:
       if (record->event.pressed) {
         escfn_down = 1;
