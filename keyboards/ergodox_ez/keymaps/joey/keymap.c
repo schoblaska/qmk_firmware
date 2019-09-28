@@ -11,6 +11,7 @@
 #define RPAREN LSFT(KC_0)
 #define UNDERSC LSFT(KC_MINS)
 #define PLUS LSFT(KC_EQL)
+#define CTRL_A LCTL(KC_A)
 
 enum custom_keycodes {
   ESCFN = SAFE_RANGE
@@ -20,13 +21,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox(
     // left hand
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    _______,
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,
     ESCFN,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______,
     KC_LCTL, KC_LALT, KC_LGUI, _______, KC_SPC,
                                                  KC_MPRV, KC_MNXT,
                                                           KC_MPLY,
-                                        KC_LGUI, MO(1),   KC_LCTL,
+                                        KC_LGUI, MO(1),   CTRL_A,
 
                                                                     // right hand
                                                                     _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
@@ -51,10 +52,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______, _______, _______,
 
                                                                     // right hand
-                                                                    _______, _______, _______, _______, _______, _______, _______,
-                                                                    _______, PLUS,    UNDERSC, LCURLY,  RCURLY,  DBLQUOT, _______,
-                                                                             KC_EQL,  KC_MINS, KC_LBRC, KC_RBRC, KC_QUOT, _______,
-                                                                    _______, _______, _______, LPAREN,  RPAREN,  _______, KC_RSFT,
+                                                                    _______, _______, _______, _______, _______, KC_MINS, KC_EQL,
+                                                                    _______, _______, PLUS,    LCURLY,  RCURLY,  DBLQUOT, _______,
+                                                                             _______, UNDERSC, KC_LBRC, KC_RBRC, KC_QUOT, _______,
+                                                                    _______, _______, _______, _______, _______, _______, KC_RSFT,
                                                                                       _______, _______, _______, _______, _______,
                                                                     _______, _______,
                                                                     _______,
