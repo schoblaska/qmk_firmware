@@ -10,7 +10,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
-    _______, LT(3, KC_DEL),
+    _______, LT(3, KC_BSPC),
     KC_NLCK, KC_PSLS, KC_PAST, KC_PMNS,
     KC_P7,   KC_P8,   KC_P9,
     KC_P4,   KC_P5,   KC_P6,   KC_PPLS,
@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_P0,   KC_PDOT, KC_PENT),
 
   [1] = LAYOUT(
-    _______, LT(3, KC_DEL),
+    _______, LT(3, KC_BSPC),
     KC_NLCK,   KC_SLSH, KC_ASTR, KC_MINS,
     KC_7,    KC_8,    KC_9,
     KC_4,    KC_5,    KC_6,    KC_PLUS,
@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_0,    KC_DOT,  KC_ENT),
 
   [2] = LAYOUT(
-    _______, LT(3, KC_DEL),
+    _______, LT(3, KC_BSPC),
     KC_NLCK, KC_SLSH, KC_ASTR, KC_MINS,
     KC_7,    KC_UP,   KC_9,
     KC_LEFT, KC_5,    KC_RGHT, KC_PLUS,
@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_0,    KC_DOT,  KC_ENT),
 
   [3] = LAYOUT(
-    _______, LT(3, KC_DEL),
+    _______, LT(3, KC_BSPC),
     _______, _______, _______, _______,
     _______, _______, _______,
     _______, _______, _______, _______,
