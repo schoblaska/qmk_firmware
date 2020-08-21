@@ -210,3 +210,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   return true;
 };
+
+void matrix_scan_keymap(void) {
+  if (escfn_down == 1) {
+    ergodox_led_all_set(255);
+  } else {
+    if (IS_LAYER_ON(1)) {
+      ergodox_right_led_1_set(255);
+    } else {
+      ergodox_right_led_1_set(0);
+    }
+
+    if (IS_LAYER_ON(2)) {
+      ergodox_right_led_2_set(255);
+    } else {
+      ergodox_right_led_2_set(0);
+    }
+
+    if (IS_LAYER_ON(3)) {
+      ergodox_right_led_3_set(255);
+    } else {
+      ergodox_right_led_3_set(0);
+    }
+  }
+};
