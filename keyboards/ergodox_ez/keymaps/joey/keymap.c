@@ -176,7 +176,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
 
     case KC_SPC:
-      modded_macro_press(record, KC_SPC, SS_LCTRL("a")"o", &modded_spc_pressed);
+      modded_macro_press(record, KC_SPC, SS_LCTRL("a") SS_DELAY(100) "o", &modded_spc_pressed);
       return false;
 
     case KC_9:
