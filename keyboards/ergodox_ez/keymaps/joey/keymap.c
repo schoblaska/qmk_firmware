@@ -4,18 +4,11 @@
 #include QMK_KEYBOARD_H
 
 #define _______ KC_TRNS
-#define DBLQUOT LSFT(KC_QUOT)
-#define LCURLY LSFT(KC_LBRC)
-#define RCURLY LSFT(KC_RBRC)
-#define LPAREN LSFT(KC_9)
-#define RPAREN LSFT(KC_0)
-#define UNDRSC LSFT(KC_MINS)
-#define PLUS LSFT(KC_EQL)
-#define CTRL_A LCTL(KC_A)
 
 enum custom_keycodes {
   ESCFN = SAFE_RANGE,
   LANG_TG,
+  CTRL_A,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -180,28 +173,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
 
     case KC_9:
-      modded_key_press(record, KC_9, UNDRSC, &modded_9_pressed);
+      modded_macro_press(record, KC_9, SS_LSFT("-"), &modded_9_pressed);
       return false;
 
     case KC_0:
-      modded_key_press(record, KC_0, PLUS, &modded_0_pressed);
+      modded_macro_press(record, KC_0, SS_LSFT("="), &modded_0_pressed);
       return false;
 
     case KC_O:
-      modded_key_press(record, KC_O, LCURLY, &modded_o_pressed);
+      modded_macro_press(record, KC_O, SS_LSFT("["), &modded_o_pressed);
       return false;
 
     case KC_P:
-      modded_key_press(record, KC_P, RCURLY, &modded_p_pressed);
+      modded_macro_press(record, KC_P, SS_LSFT("]"), &modded_p_pressed);
       return false;
 
     case KC_SCLN:
-      modded_key_press(record, KC_SCLN, DBLQUOT, &modded_sc_pressed);
+      modded_macro_press(record, KC_SCLN, SS_LSFT("'"), &modded_sc_pressed);
       return false;
 
     case LANG_TG:
       if (record->event.pressed) {
         send_string(SS_LGUI(SS_LALT(" ")));
+      } else {
+        // key released
+      }
+      return false;
+
+    case CTRL_A:
+      if (record->event.pressed) {
+        send_string(SS_LCTL("a"));
       } else {
         // key released
       }
