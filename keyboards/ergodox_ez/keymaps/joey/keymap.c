@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,
     ESCFN,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______,
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_TAB,
     KC_LCTL, KC_LALT, KC_LGUI, _______, KC_SPC,
                                                  TG(3),   LANG_TG,
                                                           _______,
@@ -212,26 +212,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 };
 
-void matrix_scan_keymap(void) {
+void matrix_scan_user(void) {
   if (escfn_down == 1) {
-    ergodox_led_all_set(255);
+    ergodox_led_all_on();
+    ergodox_led_all_set(20);
   } else {
     if (IS_LAYER_ON(1)) {
-      ergodox_right_led_1_set(255);
+      ergodox_right_led_1_on();
+      ergodox_right_led_1_set(20);
     } else {
-      ergodox_right_led_1_set(0);
+      ergodox_right_led_1_off();
     }
 
     if (IS_LAYER_ON(2)) {
-      ergodox_right_led_2_set(255);
+      ergodox_right_led_2_on();
+      ergodox_right_led_2_set(20);
     } else {
-      ergodox_right_led_2_set(0);
+      ergodox_right_led_2_off();
     }
 
     if (IS_LAYER_ON(3)) {
-      ergodox_right_led_3_set(255);
+      ergodox_right_led_3_on();
+      ergodox_right_led_3_set(20);
     } else {
-      ergodox_right_led_3_set(0);
+      ergodox_right_led_3_off();
     }
   }
 };
