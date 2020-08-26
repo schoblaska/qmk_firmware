@@ -41,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  _______, _______,
                                                           _______,
                                         _______, _______, _______,
-                                                                    _______, _______, _______, _______, KC_MINS, KC_EQL,  KC_DEL,
-                                                                    _______, _______, _______, _______, KC_LBRC, KC_RBRC, KC_PGUP,
-                                                                             _______, _______, _______, _______, KC_QUOT, KC_PGDN,
+                                                                    _______, _______, _______, _______, _______, _______, KC_DEL,
+                                                                    _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_DQUO, KC_PGUP,
+                                                                             KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_QUOT, KC_PGDN,
                                                                     _______, _______, _______, _______, _______, KC_UP,   _______,
                                                                                       _______, _______, KC_LEFT, KC_DOWN, KC_RGHT,
                                                                     _______, _______,
@@ -116,11 +116,6 @@ int modded_j_pressed = 0;
 int modded_k_pressed = 0;
 int modded_l_pressed = 0;
 int modded_spc_pressed = 0;
-int modded_9_pressed = 0;
-int modded_0_pressed = 0;
-int modded_o_pressed = 0;
-int modded_p_pressed = 0;
-int modded_sc_pressed = 0;
 
 void modded_key_press(keyrecord_t *record, uint16_t orig, uint16_t modded, int *mod_pressed) {
   if (record->event.pressed) {
@@ -190,26 +185,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case KC_SPC:
       modded_macro_press(record, KC_SPC, SS_LCTRL("a") SS_DELAY(100) "o", &modded_spc_pressed);
-      return false;
-
-    case KC_9:
-      modded_macro_press(record, KC_9, SS_LSFT("-"), &modded_9_pressed);
-      return false;
-
-    case KC_0:
-      modded_macro_press(record, KC_0, SS_LSFT("="), &modded_0_pressed);
-      return false;
-
-    case KC_O:
-      modded_macro_press(record, KC_O, SS_LSFT("["), &modded_o_pressed);
-      return false;
-
-    case KC_P:
-      modded_macro_press(record, KC_P, SS_LSFT("]"), &modded_p_pressed);
-      return false;
-
-    case KC_SCLN:
-      modded_macro_press(record, KC_SCLN, SS_LSFT("'"), &modded_sc_pressed);
       return false;
 
     case LANG_TG:
