@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                       _______, _______, KC_LEFT, KC_DOWN, KC_RGHT,
                                                                     _______, _______,
                                                                     _______,
-                                                                    _______, _______,  CMD_SPC
+                                                                    _______, _______, _______
   ),
 
   [2] = LAYOUT_ergodox(
