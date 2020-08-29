@@ -4,6 +4,9 @@
 #include QMK_KEYBOARD_H
 
 #define _______ KC_TRNS
+#define CMD_SPC LGUI(KC_SPC)
+#define CMD_C   LGUI(KC_C)
+#define CMD_V   LGUI(KC_V)
 
 enum custom_keycodes {
   ESCFN = SAFE_RANGE,
@@ -35,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, CMD_C,   CMD_V,   _______, _______,
     _______, _______, _______, _______, _______,
                                                  _______, _______,
                                                           _______,
@@ -47,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                       _______, _______, KC_LEFT, KC_DOWN, KC_RGHT,
                                                                     _______, _______,
                                                                     _______,
-                                                                    _______, _______,  _______
+                                                                    _______, _______,  CMD_SPC
   ),
 
   [2] = LAYOUT_ergodox(
