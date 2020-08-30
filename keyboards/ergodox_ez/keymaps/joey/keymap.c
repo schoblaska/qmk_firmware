@@ -5,8 +5,16 @@
 
 #define _______ KC_TRNS
 #define CMD_SPC LGUI(KC_SPC)
+#define CMD_A   LGUI(KC_A)
 #define CMD_C   LGUI(KC_C)
+#define CMD_F   LGUI(KC_F)
+#define CMD_N   LGUI(KC_N)
+#define CMD_Q   LGUI(KC_Q)
+#define CMD_R   LGUI(KC_R)
+#define CMD_S   LGUI(KC_S)
+#define CMD__T  LGUI(KC_T)
 #define CMD_V   LGUI(KC_V)
+#define CMD_W   LGUI(KC_W)
 
 enum custom_keycodes {
   ESCFN = SAFE_RANGE,
@@ -36,8 +44,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT_ergodox(
     _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,
+    _______, CMD_Q,   CMD_W,   _______, CMD_R,   CMD__T,  _______,
+    _______, CMD_A,   CMD_S,   _______, CMD_F,   _______,
     _______, _______, _______, CMD_C,   CMD_V,   _______, _______,
     _______, _______, _______, _______, _______,
                                                  _______, _______,
@@ -46,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                     _______, _______, _______, _______, _______, _______, KC_DEL,
                                                                     _______, KC_PLUS, KC_UNDS, KC_LCBR, KC_RCBR, KC_DQUO, KC_PGUP,
                                                                              KC_EQL,  KC_MINS, KC_LBRC, KC_RBRC, KC_QUOT, KC_PGDN,
-                                                                    _______, _______, _______, _______, _______, KC_UP,   _______,
+                                                                    _______, CMD_N,   _______, _______, _______, KC_UP,   _______,
                                                                                       _______, _______, KC_LEFT, KC_DOWN, KC_RGHT,
                                                                     _______, _______,
                                                                     _______,
