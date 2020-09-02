@@ -15,11 +15,13 @@
 #define CMD__T  LGUI(KC_T)
 #define CMD_V   LGUI(KC_V)
 #define CMD_W   LGUI(KC_W)
+#define CTL_A   LCTL(KC_A)
 
 enum custom_keycodes {
   ESCFN = SAFE_RANGE,
   LANG_TG,
   CTRL_A,
+  SH_HOME,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -31,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL, KC_LALT, KC_LGUI, _______, KC_LGUI,
                                                  TG(3),   LANG_TG,
                                                           _______,
-                                        MO(1),   _______, CTRL_A,
+                                        MO(1),   CTL_A,   _______,
                                                                     KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
                                                                     _______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
                                                                              KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
@@ -45,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_ergodox(
     _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, CMD__T,  _______,
-    _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, SH_HOME, _______,
     _______, _______, _______, CMD_C,   CMD_V,   _______, _______,
     _______, _______, _______, _______, _______,
                                                  _______, _______,
@@ -186,9 +188,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
 
-    case CTRL_A:
+    case SH_HOME:
       if (record->event.pressed) {
-        send_string(SS_LCTL("a"));
+        send_string("~/");
       } else {
         // key released
       }
