@@ -205,25 +205,42 @@ void matrix_scan_user(void) {
     ergodox_led_all_on();
     ergodox_led_all_set(20);
   } else {
+    ergodox_led_all_off();
+
     if (IS_LAYER_ON(1)) {
-      ergodox_right_led_1_on();
-      ergodox_right_led_1_set(20);
-    } else {
-      ergodox_right_led_1_off();
+      ergodox_right_led_3_on();
+      ergodox_right_led_3_set(20);
     }
 
     if (IS_LAYER_ON(2)) {
       ergodox_right_led_2_on();
       ergodox_right_led_2_set(20);
-    } else {
-      ergodox_right_led_2_off();
     }
 
     if (IS_LAYER_ON(3)) {
+      ergodox_right_led_2_on();
+      ergodox_right_led_2_set(20);
       ergodox_right_led_3_on();
       ergodox_right_led_3_set(20);
-    } else {
-      ergodox_right_led_3_off();
+    }
+
+    if (IS_LAYER_ON(4)) {
+      ergodox_right_led_1_on();
+      ergodox_right_led_1_set(20);
+    }
+
+    if (IS_LAYER_ON(5)) {
+      ergodox_right_led_1_on();
+      ergodox_right_led_1_set(20);
+      ergodox_right_led_3_on();
+      ergodox_right_led_3_set(20);
+    }
+
+    if (IS_LAYER_ON(6)) {
+      ergodox_right_led_1_on();
+      ergodox_right_led_1_set(20);
+      ergodox_right_led_2_on();
+      ergodox_right_led_2_set(20);
     }
   }
 };
