@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                     _______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
                                                                              KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
                                                                     KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                                                                                      MO(2),   MO(4),   KC_RGUI, KC_RALT, KC_RCTL,
+                                                                                      MO(2),   TG(4),   KC_RGUI, KC_RALT, KC_RCTL,
                                                                     KC_LEFT, KC_RGHT,
                                                                     KC_UP,
                                                                     KC_DOWN, KC_RCTL, KC_SPC
@@ -111,13 +111,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                           _______,
                                         _______, _______, _______,
                                                                     _______, _______, _______, _______, _______, _______, _______,
-                                                                    _______, _______, _______, _______, KC_P7,   KC_P8,   KC_P9,
-                                                                             _______, _______, _______, KC_P4,   KC_P5,   KC_P6,
-                                                                    _______, _______, _______, _______, KC_P1,   KC_P2,   KC_P3,
+                                                                    _______, _______, _______, _______, KC_UP,   _______, _______,
+                                                                             _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______,
+                                                                    _______, _______, _______, _______, _______, _______, _______,
                                                                                       _______, _______, _______, _______, _______,
                                                                     _______, _______,
                                                                     _______,
-                                                                    _______, _______,  _______
+                                                                    _______, _______, _______
   ),
 };
 
@@ -226,40 +226,19 @@ void matrix_scan_user(void) {
   } else {
     ergodox_led_all_off();
 
-    if (IS_LAYER_ON(1)) {
-      ergodox_right_led_3_on();
-      ergodox_right_led_3_set(20);
-    }
-
     if (IS_LAYER_ON(2)) {
-      ergodox_right_led_2_on();
-      ergodox_right_led_2_set(20);
+      ergodox_right_led_1_on();
+      ergodox_right_led_1_set(20);
     }
 
     if (IS_LAYER_ON(3)) {
       ergodox_right_led_2_on();
       ergodox_right_led_2_set(20);
-      ergodox_right_led_3_on();
-      ergodox_right_led_3_set(20);
     }
 
     if (IS_LAYER_ON(4)) {
-      ergodox_right_led_1_on();
-      ergodox_right_led_1_set(20);
-    }
-
-    if (IS_LAYER_ON(5)) {
-      ergodox_right_led_1_on();
-      ergodox_right_led_1_set(20);
       ergodox_right_led_3_on();
       ergodox_right_led_3_set(20);
-    }
-
-    if (IS_LAYER_ON(6)) {
-      ergodox_right_led_1_on();
-      ergodox_right_led_1_set(20);
-      ergodox_right_led_2_on();
-      ergodox_right_led_2_set(20);
     }
   }
 };
