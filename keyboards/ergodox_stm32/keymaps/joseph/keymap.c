@@ -1,4 +1,7 @@
-// make ergodox_stm32:joseph
+// to get this to work, I had to copy it into the zsa fork of this project,
+// then run:
+// qmk compile -kb zsa/ergodox_ez/stm32/base -km joseph
+// qmk flash -kb zsa/ergodox_ez/stm32/base -km joseph
 
 #include QMK_KEYBOARD_H
 
@@ -220,22 +223,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void matrix_scan_user(void) {
   if (escfn_down == 1) {
-    ergodox_board_led_1_on();
-    ergodox_board_led_2_on();
-    ergodox_board_led_3_on();
+    ergodox_right_led_1_on();
+    ergodox_right_led_2_on();
+    ergodox_right_led_3_on();
   } else {
     ergodox_led_all_off();
 
     if (IS_LAYER_ON(2)) {
-      ergodox_board_led_1_on();
+      ergodox_right_led_1_on();
     }
 
     if (IS_LAYER_ON(3)) {
-      ergodox_board_led_2_on();
+      ergodox_right_led_2_on();
     }
 
     if (IS_LAYER_ON(4)) {
-      ergodox_board_led_3_on();
+      ergodox_right_led_3_on();
     }
   }
 };
