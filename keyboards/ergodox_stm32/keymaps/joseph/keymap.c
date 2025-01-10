@@ -1,5 +1,4 @@
-// make ergodox_ez:joey
-// run graphical teensy loader: https://www.pjrc.com/teensy/loader_mac.html
+// make ergodox_stm32:joseph
 
 #include QMK_KEYBOARD_H
 
@@ -196,7 +195,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
 
     case KC_SPC:
-      modded_macro_press(record, KC_SPC, SS_LCTRL("a") SS_DELAY(100) "o", &modded_spc_pressed);
+      modded_macro_press(record, KC_SPC, SS_LCTL("a") SS_DELAY(100) "o", &modded_spc_pressed);
       return false;
 
     case LANG_TG:
@@ -221,24 +220,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void matrix_scan_user(void) {
   if (escfn_down == 1) {
-    ergodox_led_all_on();
-    ergodox_led_all_set(20);
+    ergodox_board_led_1_on();
+    ergodox_board_led_2_on();
+    ergodox_board_led_3_on();
   } else {
     ergodox_led_all_off();
 
     if (IS_LAYER_ON(2)) {
-      ergodox_right_led_1_on();
-      ergodox_right_led_1_set(20);
+      ergodox_board_led_1_on();
     }
 
     if (IS_LAYER_ON(3)) {
-      ergodox_right_led_2_on();
-      ergodox_right_led_2_set(20);
+      ergodox_board_led_2_on();
     }
 
     if (IS_LAYER_ON(4)) {
-      ergodox_right_led_3_on();
-      ergodox_right_led_3_set(20);
+      ergodox_board_led_3_on();
     }
   }
 };
